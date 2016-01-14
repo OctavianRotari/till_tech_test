@@ -5,7 +5,8 @@ function HipsterTill() {
   this.newItem = true,
   this.total = 0,
   this.TAX = 8.64/100,
-  this.taxOnTotal = 0
+  this.taxOnTotal = 0,
+  this.totalPlusTax = 0
 }
 
 HipsterTill.prototype.printMenu = function(menu){
@@ -53,12 +54,18 @@ HipsterTill.prototype.calcTotal = function(){
   for(var i=0; i < this.order.length; i++){
     var singleItemTot = this.order[i].price * this.order[i].quantity;
     this.total += singleItemTot;
-    return this.total.toFixed(2);
   } 
+  return this.total.toFixed(2);
 }
 
 HipsterTill.prototype.calcTax = function(){
   this.calcTotal();
   this.taxOnTotal = this.total * this.TAX; 
   return this.taxOnTotal.toFixed(2);
+}
+
+HipsterTill.prototype.calcTotalPlusTax = function(){
+  this.calcTax();
+  this.totalPlusTax = this.total + this.taxOnTotal;
+  return this.totalPlusTax.toFixed(2);
 }

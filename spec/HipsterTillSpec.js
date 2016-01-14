@@ -64,14 +64,20 @@ describe("HipsterTill", function() {
     it("calculates the total of the order", function(){
       hipsterTill.addToOrder("Choc Mousse");
       hipsterTill.addToOrder("Choc Mousse");
-      expect(hipsterTill.calcTotal()).toEqual((16.40).toFixed(2))
+      expect(hipsterTill.calcTotal()).toEqual('16.40')
     });
 
     it("calculates the tax of the order", function(){
       hipsterTill.addToOrder("Choc Mousse");
       hipsterTill.addToOrder("Choc Mousse");
       expect(hipsterTill.calcTax()).toEqual('1.42')
-    })
+    });
+
+    it("calculates the total plus the tax", function(){
+      hipsterTill.addToOrder("Choc Mousse");
+      hipsterTill.addToOrder("Affogato");
+      expect(hipsterTill.calcTotalPlusTax()).toEqual('24.99')
+    });
   })
 //
 //  // demonstrates use of spies to intercept and test method calls
