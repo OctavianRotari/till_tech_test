@@ -28,15 +28,15 @@ describe("HipsterTill", function() {
   };
 
   beforeEach(function() {
-     hipsterTill = new HipsterTill();
+     hipsterTill = new HipsterTill(menu);
   });
 
   it("it prints the menu of the coffe shop", function() {
-    expect(hipsterTill.printMenu(menu)).toEqual(menuSpec);
+    expect(hipsterTill.myMenu).toEqual(menuSpec);
   });
 
   it("it prints out the items and the prices", function() {
-    expect(hipsterTill.printPrices()).toEqual(menuSpec.prices[0]);
+    expect(hipsterTill.prices).toEqual(menuSpec.prices[0]);
   });
 
   describe("when an order is placed", function() {
@@ -58,27 +58,27 @@ describe("HipsterTill", function() {
     });
 
   });
-  
-  describe('when the total is calculated', function(){
-    
+
+  describe("when the total is calculated", function(){
+
     it("calculates the total of the order", function(){
       hipsterTill.addToOrder("Choc Mousse");
       hipsterTill.addToOrder("Choc Mousse");
-      expect(hipsterTill.calcTotal()).toEqual('16.40')
+      expect(hipsterTill.calcTotal()).toEqual("16.40");
     });
 
     it("calculates the tax of the order", function(){
       hipsterTill.addToOrder("Choc Mousse");
       hipsterTill.addToOrder("Choc Mousse");
-      expect(hipsterTill.calcTax()).toEqual('1.42')
+      expect(hipsterTill.calcTax()).toEqual("1.42");
     });
 
     it("calculates the total plus the tax", function(){
       hipsterTill.addToOrder("Choc Mousse");
       hipsterTill.addToOrder("Affogato");
-      expect(hipsterTill.calcTotalPlusTax()).toEqual('24.99')
+      expect(hipsterTill.calcTotalPlusTax()).toEqual("24.99");
     });
-  })
+  });
 //
 //  // demonstrates use of spies to intercept and test method calls
 //  it("tells the current song if the user has made it a favorite", function() {
