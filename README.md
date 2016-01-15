@@ -1,21 +1,10 @@
 Till tech test
 ==============
-
-*Instructions*: Please fork this repo and submit a pull request once you've finished. Then prepare for code review!
-
 ![a till](/images/till.jpg)
 
 We want to sell tills to local hipster coffee shop who are finally embracing the 21st century. We need a new till to replace their vintage machines - unfortunately, hipster staff are too cool to learn a new system, so we need you to build something that they will understand.
 
-Specification
--------------
-
-This is what a sample receipt looks like:
-
-![a receipt](/images/receipt.jpg)
-
-
-Version 1
+Version 1 (done)
 ---------
 
 Implement a system that contains the business logic to produce receipts similar to this, based on a `json` price list and test orders. A sample `.json` file has been provided with the list of products sold at this particular coffee shop. 
